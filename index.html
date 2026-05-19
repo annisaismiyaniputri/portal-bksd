@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Kerja Sama Daerah — Kab. Musi Banyuasin</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8f9fc;color:#1a1a2e;font-size:15px;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{background:#1558b0;position:sticky;top:0;z-index:100;}
+.nav-top{display:flex;align-items:center;gap:12px;padding:12px 32px;border-bottom:1px solid rgba(255,255,255,0.12);}
+.nav-logo{width:32px;height:32px;background:white;border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.nav-logo svg{width:18px;height:18px;fill:#1558b0;}
+.nav-title{color:white;font-size:15px;font-weight:600;}
+.nav-tabs{display:flex;padding:0 32px;}
+.nav-tab{padding:10px 18px;color:rgba(255,255,255,0.7);font-size:13px;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;}
+.nav-tab:hover{color:white;}
+.nav-tab.active{color:white;border-bottom-color:white;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1558b0 0%,#1e7fc5 100%);padding:56px 32px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:600;letter-spacing:1px;padding:5px 14px;border-radius:20px;margin-bottom:16px;}
+.hero h1{color:white;font-size:32px;font-weight:600;margin-bottom:12px;line-height:1.3;}
+.hero p{color:rgba(255,255,255,0.8);font-size:15px;max-width:520px;margin:0 auto 24px;line-height:1.7;}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:white;color:#1558b0;padding:10px 24px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .2s;}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,0.15);}
+.btn-outline{background:transparent;color:white;padding:10px 24px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;border:2px solid rgba(255,255,255,0.5);transition:all .2s;}
+.btn-outline:hover{border-color:white;background:rgba(255,255,255,0.1);}
+
+/* CONTAINER */
+.container{max-width:900px;margin:0 auto;padding:0 32px;}
+section{padding:40px 0;}
+
+/* SECTION TITLE */
+.sec-label{font-size:11px;font-weight:600;letter-spacing:1.5px;color:#1558b0;text-transform:uppercase;margin-bottom:6px;}
+.sec-title{font-size:22px;font-weight:600;margin-bottom:8px;}
+.sec-sub{font-size:14px;color:#666;line-height:1.6;margin-bottom:28px;}
+
+/* QUICK ACCESS CARDS */
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
+.qa-card{background:white;border:1px solid #e8ecf4;border-radius:14px;padding:20px 16px;cursor:pointer;transition:all .2s;}
+.qa-card:hover{border-color:#1558b0;transform:translateY(-2px);box-shadow:0 4px 20px rgba(21,88,176,0.1);}
+.qa-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;}
+.qa-card h3{font-size:13px;font-weight:600;margin-bottom:4px;}
+.qa-card p{font-size:11px;color:#888;line-height:1.5;}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:0;}
+.step{display:flex;gap:0;position:relative;}
+.step-left{display:flex;flex-direction:column;align-items:center;width:48px;flex-shrink:0;}
+.step-num{width:36px;height:36px;border-radius:50%;background:#1558b0;color:white;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;z-index:1;flex-shrink:0;}
+.step-line{width:2px;background:#e0e8f5;flex:1;margin:4px 0;}
+.step:last-child .step-line{display:none;}
+.step-content{background:white;border:1px solid #e8ecf4;border-radius:12px;padding:16px 18px;margin-bottom:10px;flex:1;}
+.step-content h3{font-size:14px;font-weight:600;margin-bottom:4px;}
+.step-content p{font-size:13px;color:#666;line-height:1.6;}
+.step-tag{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;margin-top:6px;}
+.tag-opd{background:#e8f4e8;color:#2d7a2d;}
+.tag-bagian{background:#e8f0fb;color:#1558b0;}
+.tag-both{background:#fef3e2;color:#b07a00;}
+
+/* REGULASI */
+.reg-list{display:flex;flex-direction:column;gap:10px;}
+.reg-item{background:white;border:1px solid #e8ecf4;border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:all .2s;}
+.reg-item:hover{border-color:#1558b0;box-shadow:0 2px 12px rgba(21,88,176,0.08);}
+.reg-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
+.reg-item h3{font-size:14px;font-weight:600;margin-bottom:2px;}
+.reg-item p{font-size:12px;color:#888;}
+.reg-arrow{margin-left:auto;color:#aaa;font-size:18px;}
+
+/* TEMPLATE */
+.tmpl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.tmpl-card{background:white;border:1px solid #e8ecf4;border-radius:14px;padding:20px;cursor:pointer;transition:all .2s;}
+.tmpl-card:hover{border-color:#1558b0;transform:translateY(-2px);box-shadow:0 4px 20px rgba(21,88,176,0.1);}
+.tmpl-card .icon{font-size:28px;margin-bottom:12px;}
+.tmpl-card h3{font-size:14px;font-weight:600;margin-bottom:4px;}
+.tmpl-card p{font-size:12px;color:#888;line-height:1.5;margin-bottom:12px;}
+.tmpl-btn{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#1558b0;}
+
+/* KONTAK */
+.kontak-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+.kontak-card{background:white;border:1px solid #e8ecf4;border-radius:14px;padding:20px;}
+.kontak-card h3{font-size:14px;font-weight:600;margin-bottom:12px;}
+.kontak-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
+.kontak-row span:first-child{font-size:16px;margin-top:1px;}
+.kontak-row div{font-size:13px;color:#444;line-height:1.5;}
+.kontak-row div strong{display:block;color:#1a1a2e;font-weight:600;}
+
+/* PENGUMUMAN */
+.notif{background:#fff8e1;border:1px solid #ffe082;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;}
+.notif.info{background:#e8f0fb;border-color:#b3cdf7;}
+.notif-icon{font-size:18px;flex-shrink:0;}
+.notif h3{font-size:13px;font-weight:600;margin-bottom:3px;}
+.notif p{font-size:12px;color:#666;line-height:1.5;}
+
+/* FOOTER */
+footer{background:#1558b0;color:rgba(255,255,255,0.75);text-align:center;padding:24px 32px;font-size:12px;}
+footer strong{color:white;}
+
+/* DIVIDER */
+hr{border:none;border-top:1px solid #eef0f6;margin:0;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <span class="nav-title">Portal Kerja Sama Daerah — Kab. Musi Banyuasin</span>
+  </div>
+  <div class="nav-tabs">
+    <div class="nav-tab active">Beranda</div>
+    <div class="nav-tab">Prosedur</div>
+    <div class="nav-tab">Regulasi</div>
+    <div class="nav-tab">Template</div>
+    <div class="nav-tab">Kontak</div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">BAGIAN KERJA SAMA · SETDA KAB. MUSI BANYUASIN</div>
+  <h1>Panduan Kerja Sama Daerah</h1>
+  <p>Referensi prosedur, regulasi, dan template dokumen kerja sama untuk seluruh OPD di lingkungan Pemerintah Kabupaten Musi Banyuasin</p>
+  <div class="hero-btns">
+    <button class="btn-primary">Lihat prosedur lengkap</button>
+    <button class="btn-outline">Unduh template dokumen</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- PENGUMUMAN -->
+  <section>
+    <div class="sec-label">Pengumuman</div>
+    <div class="notif info">
+      <span class="notif-icon">📢</span>
+      <div>
+        <h3>Format baru PKS berlaku mulai 2025</h3>
+        <p>Seluruh OPD wajib menggunakan template MoU dan PKS terbaru sesuai Permendagri No. 22 Tahun 2020. Template dapat diunduh pada menu Template di atas.</p>
+      </div>
+    </div>
+    <div class="notif">
+      <span class="notif-icon">📅</span>
+      <div>
+        <h3>Jadwal konsultasi dokumen kerja sama</h3>
+        <p>Senin & Rabu, pukul 09.00–11.00 WIB di ruang Bagian Kerja Sama, Gedung Sekretariat Daerah Kab. Musi Banyuasin. Tidak perlu daftar, datang langsung.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- AKSES CEPAT -->
+  <section>
+    <div class="sec-label">Akses cepat</div>
+    <div class="sec-title">Apa yang Anda butuhkan?</div>
+    <div class="grid-4">
+      <div class="qa-card">
+        <div class="qa-icon" style="background:#e8f0fb;">📋</div>
+        <h3>Alur prosedur</h3>
+        <p>12 langkah penyelenggaraan kerja sama daerah</p>
+      </div>
+      <div class="qa-card">
+        <div class="qa-icon" style="background:#e8f4e8;">📄</div>
+        <h3>Template MoU & PKS</h3>
+        <p>Format standar resmi siap pakai</p>
+      </div>
+      <div class="qa-card">
+        <div class="qa-icon" style="background:#fef3e2;">📚</div>
+        <h3>Regulasi</h3>
+        <p>Permendagri 22/2020 & peraturan terkait</p>
+      </div>
+      <div class="qa-card">
+        <div class="qa-icon" style="background:#fde8e8;">✉️</div>
+        <h3>Hubungi kami</h3>
+        <p>Konsultasi dan pengajuan dokumen</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- PROSEDUR -->
+  <section>
+    <div class="sec-label">Prosedur</div>
+    <div class="sec-title">12 Langkah Kerja Sama Daerah</div>
+    <div class="sec-sub">Berdasarkan Permendagri No. 22 Tahun 2020 tentang Tata Cara Kerja Sama Daerah. <span style="background:#e8f4e8;color:#2d7a2d;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:600;">OPD</span> = tugas OPD pemrakarsa &nbsp; <span style="background:#e8f0fb;color:#1558b0;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:600;">Bagian KS</span> = tugas Bagian Kerja Sama &nbsp; <span style="background:#fef3e2;color:#b07a00;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:600;">Bersama</span> = bersama-sama</div>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Identifikasi kebutuhan kerja sama</h3>
+          <p>OPD pemrakarsa mengidentifikasi kebutuhan dan potensi kerja sama sesuai tugas pokok dan fungsinya, serta memastikan kerja sama yang akan dilakukan tidak bertentangan dengan peraturan perundang-undangan yang berlaku.</p>
+          <span class="step-tag tag-opd">OPD</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Pengajuan usulan kerja sama</h3>
+          <p>OPD menyampaikan surat usulan kerja sama kepada Bupati melalui Bagian Kerja Sama, dilengkapi dengan latar belakang, tujuan, objek kerja sama, calon mitra, dan manfaat yang diharapkan bagi daerah.</p>
+          <span class="step-tag tag-opd">OPD</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Penelitian dan kajian kelayakan</h3>
+          <p>Bagian Kerja Sama melakukan kajian kelayakan atas usulan yang masuk, mencakup aspek hukum, keuangan, teknis, dan manfaat strategis bagi Pemerintah Kabupaten Musi Banyuasin.</p>
+          <span class="step-tag tag-bagian">Bagian KS</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Persetujuan prinsip Bupati</h3>
+          <p>Bagian Kerja Sama menyampaikan hasil kajian kepada Bupati untuk memperoleh persetujuan prinsip sebelum proses negosiasi dan penyusunan naskah dimulai.</p>
+          <span class="step-tag tag-bagian">Bagian KS</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Penjajakan dan negosiasi dengan mitra</h3>
+          <p>Dilakukan pertemuan dengan calon mitra untuk membahas dan menyepakati pokok-pokok substansi kerja sama, termasuk ruang lingkup, hak dan kewajiban masing-masing pihak, jangka waktu, dan mekanisme pelaksanaan.</p>
+          <span class="step-tag tag-both">Bersama</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">6</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Penyusunan draft Kesepakatan Bersama (MoU)</h3>
+          <p>Bagian Kerja Sama bersama OPD pemrakarsa menyusun draft MoU menggunakan format standar yang berlaku, memuat identitas para pihak, maksud dan tujuan, ruang lingkup, jangka waktu (maks. 5 tahun), dan ketentuan lainnya.</p>
+          <span class="step-tag tag-both">Bersama</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">7</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Review dan harmonisasi naskah</h3>
+          <p>Bagian Kerja Sama melakukan review akhir naskah MoU untuk memastikan kesesuaian dengan format, tata naskah dinas, dan ketentuan Permendagri No. 22 Tahun 2020 sebelum disampaikan untuk penandatanganan.</p>
+          <span class="step-tag tag-bagian">Bagian KS</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">8</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Penandatanganan Kesepakatan Bersama (MoU)</h3>
+          <p>MoU ditandatangani oleh Bupati Musi Banyuasin dan pimpinan mitra kerja sama. Penandatanganan dapat dilakukan oleh pejabat yang diberi kuasa apabila Bupati berhalangan hadir.</p>
+          <span class="step-tag tag-both">Bersama</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">9</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Penyusunan Perjanjian Kerja Sama (PKS)</h3>
+          <p>Setelah MoU ditandatangani, OPD pemrakarsa bersama mitra menyusun PKS sebagai penjabaran teknis dan operasional dari MoU, memuat program kegiatan, anggaran, jadwal, dan indikator keberhasilan.</p>
+          <span class="step-tag tag-both">Bersama</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">10</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Penandatanganan PKS</h3>
+          <p>PKS ditandatangani oleh Kepala OPD yang diberi kuasa oleh Bupati. Salinan PKS disampaikan kepada Bagian Kerja Sama untuk keperluan pengarsipan dan monitoring.</p>
+          <span class="step-tag tag-both">Bersama</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">11</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Pelaksanaan dan pelaporan</h3>
+          <p>OPD pemrakarsa melaksanakan program kerja sama sesuai PKS dan menyampaikan laporan perkembangan pelaksanaan kepada Bupati melalui Bagian Kerja Sama setiap semester.</p>
+          <span class="step-tag tag-opd">OPD</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-left"><div class="step-num">12</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <h3>Monitoring, evaluasi, dan tindak lanjut</h3>
+          <p>Bagian Kerja Sama melakukan monitoring masa berlaku dan evaluasi pelaksanaan kerja sama. Hasil evaluasi menjadi dasar keputusan: perpanjangan, perubahan, atau penghentian kerja sama sesuai kesepakatan para pihak.</p>
+          <span class="step-tag tag-bagian">Bagian KS</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- REGULASI -->
+  <section>
+    <div class="sec-label">Regulasi</div>
+    <div class="sec-title">Peraturan yang Berlaku</div>
+    <div class="sec-sub">Dokumen regulasi yang menjadi dasar hukum penyelenggaraan kerja sama daerah.</div>
+    <div class="reg-list">
+      <div class="reg-item">
+        <div class="reg-icon" style="background:#e8f0fb;">📘</div>
+        <div>
+          <h3>Permendagri No. 22 Tahun 2020</h3>
+          <p>Tentang Tata Cara Kerja Sama Daerah dengan Daerah Lain dan Kerja Sama Daerah dengan Pihak Ketiga — regulasi utama penyelenggaraan kerja sama daerah</p>
+        </div>
+        <span class="reg-arrow">›</span>
+      </div>
+      <div class="reg-item">
+        <div class="reg-icon" style="background:#e8f4e8;">📗</div>
+        <div>
+          <h3>UU No. 23 Tahun 2014 tentang Pemerintahan Daerah</h3>
+          <p>Landasan hukum kewenangan Pemerintah Daerah dalam melaksanakan kerja sama daerah</p>
+        </div>
+        <span class="reg-arrow">›</span>
+      </div>
+      <div class="reg-item">
+        <div class="reg-icon" style="background:#fef3e2;">📙</div>
+        <div>
+          <h3>Permenpan RB No. 10 Tahun 2023</h3>
+          <p>Tentang Jabatan Fungsional Analis Kerja Sama — dasar tugas pokok dan fungsi pengelolaan kerja sama daerah</p>
+        </div>
+        <span class="reg-arrow">›</span>
+      </div>
+      <div class="reg-item">
+        <div class="reg-icon" style="background:#fde8e8;">📕</div>
+        <div>
+          <h3>Peraturan Bupati Musi Banyuasin</h3>
+          <p>Peraturan daerah terkait tata naskah dinas dan pengelolaan kerja sama di lingkungan Pemkab Musi Banyuasin</p>
+        </div>
+        <span class="reg-arrow">›</span>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- TEMPLATE -->
+  <section>
+    <div class="sec-label">Template</div>
+    <div class="sec-title">Unduh Template Dokumen</div>
+    <div class="sec-sub">Gunakan template resmi berikut untuk penyusunan dokumen kerja sama. Pastikan seluruh isian sesuai dengan ketentuan yang berlaku.</div>
+    <div class="tmpl-grid">
+      <div class="tmpl-card">
+        <div class="icon">📄</div>
+        <h3>Template MoU (KSDD)</h3>
+        <p>Kesepakatan Bersama untuk Kerja Sama Daerah dengan Daerah lain — sesuai format Permendagri 22/2020</p>
+        <span class="tmpl-btn">⬇ Unduh .docx</span>
+      </div>
+      <div class="tmpl-card">
+        <div class="icon">📃</div>
+        <h3>Template PKS (KSDD)</h3>
+        <p>Perjanjian Kerja Sama sebagai turunan MoU untuk kerja sama antar daerah</p>
+        <span class="tmpl-btn">⬇ Unduh .docx</span>
+      </div>
+      <div class="tmpl-card">
+        <div class="icon">📋</div>
+        <h3>Template MoU (KSDPK)</h3>
+        <p>Kesepakatan Bersama untuk Kerja Sama Daerah dengan Pihak Ketiga (swasta/lembaga)</p>
+        <span class="tmpl-btn">⬇ Unduh .docx</span>
+      </div>
+      <div class="tmpl-card">
+        <div class="icon">📑</div>
+        <h3>Template PKS (KSDPK)</h3>
+        <p>Perjanjian Kerja Sama sebagai turunan MoU untuk kerja sama dengan pihak ketiga</p>
+        <span class="tmpl-btn">⬇ Unduh .docx</span>
+      </div>
+      <div class="tmpl-card">
+        <div class="icon">📝</div>
+        <h3>Surat Usulan Kerja Sama</h3>
+        <p>Format surat pengajuan usulan kerja sama dari OPD kepada Bupati melalui Bagian Kerja Sama</p>
+        <span class="tmpl-btn">⬇ Unduh .docx</span>
+      </div>
+      <div class="tmpl-card">
+        <div class="icon">📊</div>
+        <h3>Form Laporan Semester</h3>
+        <p>Format laporan perkembangan pelaksanaan kerja sama yang disampaikan OPD setiap semester</p>
+        <span class="tmpl-btn">⬇ Unduh .docx</span>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- KONTAK -->
+  <section>
+    <div class="sec-label">Kontak</div>
+    <div class="sec-title">Hubungi Bagian Kerja Sama</div>
+    <div class="sec-sub">Untuk konsultasi, pengajuan usulan, atau pertanyaan terkait prosedur kerja sama daerah.</div>
+    <div class="kontak-grid">
+      <div class="kontak-card">
+        <h3>📍 Alamat kantor</h3>
+        <div class="kontak-row">
+          <span>🏛</span>
+          <div><strong>Bagian Kerja Sama</strong>Sekretariat Daerah Kabupaten Musi Banyuasin<br>Jl. Kolonel Wahid Udin, Sekayu<br>Sumatera Selatan</div>
+        </div>
+      </div>
+      <div class="kontak-card">
+        <h3>🕐 Jam konsultasi</h3>
+        <div class="kontak-row">
+          <span>📅</span>
+          <div><strong>Senin & Rabu</strong>09.00 – 11.00 WIB<br>Tidak perlu janji, datang langsung</div>
+        </div>
+        <div class="kontak-row">
+          <span>📅</span>
+          <div><strong>Hari kerja lainnya</strong>Melalui surat atau email resmi</div>
+        </div>
+      </div>
+      <div class="kontak-card">
+        <h3>✉️ Kontak resmi</h3>
+        <div class="kontak-row">
+          <span>📧</span>
+          <div><strong>Email</strong>kerjasama@musibanyuasinkab.go.id</div>
+        </div>
+        <div class="kontak-row">
+          <span>📞</span>
+          <div><strong>Telepon</strong>(0714) — (sesuaikan nomor resmi)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <strong>Bagian Kerja Sama — Sekretariat Daerah Kabupaten Musi Banyuasin</strong><br>
+  Jl. Kolonel Wahid Udin, Sekayu, Sumatera Selatan &nbsp;|&nbsp; © 2025
+</footer>
+
+</body>
+</html>
